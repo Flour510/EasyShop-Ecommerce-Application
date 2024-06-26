@@ -2,7 +2,6 @@ package org.yearup.models;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import org.yearup.models.authentication.Authority;
-
 import java.util.HashSet;
 import java.util.Objects;
 import java.util.Set;

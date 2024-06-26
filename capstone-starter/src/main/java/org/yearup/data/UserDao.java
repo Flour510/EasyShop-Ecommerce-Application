@@ -1,7 +1,6 @@
 package org.yearup.data;
 
 import org.yearup.models.User;
-
 import java.util.List;
 
 public interface UserDao {

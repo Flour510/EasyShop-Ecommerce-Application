@@ -7,7 +7,6 @@ import org.yearup.data.ShoppingCartDao;
 import org.yearup.data.UserDao;
 import org.yearup.models.ShoppingCart;
 import org.yearup.models.User;
-
 import java.security.Principal;
 
 // convert this class to a REST controller
@@ -18,8 +17,6 @@ public class ShoppingCartController
     private ShoppingCartDao shoppingCartDao;
     private UserDao userDao;
     private ProductDao productDao;
-
-
 
     // each method in this controller requires a Principal object as a parameter
     public ShoppingCart getCart(Principal principal)
