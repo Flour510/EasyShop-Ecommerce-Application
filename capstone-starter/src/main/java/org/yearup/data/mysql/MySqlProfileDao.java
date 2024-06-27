@@ -43,4 +43,54 @@ public class MySqlProfileDao extends MySqlDaoBase implements ProfileDao
         }
     }
 
+    // optional phase 4 starts
+    @Override
+    public Profile getByUserId(int userId) {
+        String sql = "SELECT * FROM profiles WHERE user_id = ?";
+        try (Connection connection = getConnection()){
+            PreparedStatement preparedStatement = connection.prepareStatement(sql);
+            preparedStatement.setInt(1, userId);
+
+            ResultSet resultSet = preparedStatement.executeQuery();
+            if (resultSet.next()) {
+                return new Profile(
+                     resultSet.getInt("user_id"),
+                     resultSet.getString("first_name"),
+                     resultSet.getString("last_name"),
+                     resultSet.getString("phone"),
+                     resultSet.getString("email"),
+                     resultSet.getString("address"),
+                     resultSet.getString("city"),
+                     resultSet.getString("state"),
+                     resultSet.getString("zip")
+                );
+            }
+        } catch (SQLException e) {
+            throw new RuntimeException(e);
+        }
+        return null;
+    }
+
+    @Override
+    public void update(Profile profile) {
+        String sql = "UPDATE profiles SET first_name = ?, last_name = ?, phone = ?, email = ?, address = ?, city = ?, state = ?, zip = ? WHERE user_id = ?";
+        try (Connection connection = getConnection()) {
+            PreparedStatement preparedStatement = connection.prepareStatement(sql);
+
+            preparedStatement.setString(1, profile.getFirstName());
+            preparedStatement.setString(2, profile.getLastName());
+            preparedStatement.setString(3, profile.getPhone());
+            preparedStatement.setString(4, profile.getEmail());
+            preparedStatement.setString(5, profile.getAddress());
+            preparedStatement.setString(6, profile.getCity());
+            preparedStatement.setString(7, profile.getState());
+            preparedStatement.setString(8, profile.getZip());
+            preparedStatement.setInt(9, profile.getUserId());
+
+            preparedStatement.executeUpdate();
+        } catch (SQLException e) {
+            throw new RuntimeException(e);
+        }
+    }
+    // optional phase 4 ends
 }
