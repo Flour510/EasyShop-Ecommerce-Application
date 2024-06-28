@@ -29,7 +29,7 @@ The ProfileDao and MySqlProfileDao classes already existed to handle profile cre
 ![Screenshot 2024-06-27 at 11 20 02 PM](https://github.com/Flour510/EasyShop-Ecommerce-Application/assets/99916123/58c40fca-f89f-424d-9dae-a0997c86f44d)
 
 ## Interesting Part of the Code:
-One piece of code I found particularly interesting to write was the logic for fixing a bug in the ProductsController class. This bug took longer to resolve than I anticipated, and I only discovered the solution after seeking help. To fix the updateProduct method, all I had to do was change two words in the try/catch block. It's still surprising to me how minuscule bugs like this can take so much time to identify.  
+One piece of code I found particularly interesting to write was the logic for fixing a bug 🪲 in the ProductsController class. This bug took longer to resolve than I anticipated, and I only discovered the solution after seeking help. To fix the updateProduct method, all I had to do was change two words in the try/catch block. It's still surprising to me how minuscule bugs like this can take so much time to identify.  
 
 This is the initial code:
 
