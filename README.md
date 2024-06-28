@@ -19,7 +19,7 @@ I tested the search logic to identify and fix bugs. The bugs included accessing 
 ### New Feature:
 Once these requirements were met, I proceeded to add a new feature, including a ProfileController Class.
 
-## ProfileController Class
+## ProfileController Class:
 Since this was an additional feature, I began by creating a new class and implementing the GET and PUT methods. 
 
 The ProfileDao and MySqlProfileDao classes already existed to handle profile creation during user registration. I updated these DAO classes to include the getByUserId and update the methods. 
