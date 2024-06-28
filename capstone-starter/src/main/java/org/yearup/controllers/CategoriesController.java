@@ -67,7 +67,7 @@ public class CategoriesController
     @PreAuthorize("hasRole('ADMIN')") // add annotation to ensure that only an ADMIN can call this function
     public void updateCategory(@PathVariable int id, @RequestBody Category category)
     {
-        // update the category by id
+        // update the category by id and category
         categoryDao.update(id, category);
     }
 
